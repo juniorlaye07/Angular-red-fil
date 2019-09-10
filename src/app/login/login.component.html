@@ -1,0 +1,33 @@
+<div class="page login-page">
+  <div class="container">
+    <div class="form-outer text-center d-flex align-items-center" style="margin-right:145px">
+      <div class="form-inner card" style="border-radius:30px 15px 30px 15px">
+        <div class="logo text-uppercase"><span>Kanuni@</span><strong class="text-primary">Money</strong></div>
+
+        <form #f="ngForm" (ngSubmit)="onLogin(f.value)" class="text-left form-validate">
+          <div class="form-group-material">
+            <input id="login-username" type="text" name="username" ngModel required data-msg="Nom d'utilisateur requis!"
+              class="input-material" style="border-radius:20px 10px 20px 10px">
+            <label for="login-username" class="label-material">Username</label>
+          </div>
+          <div class="form-group-material">
+            <input id="login-password" type="password" name="password" ngModel required
+              data-msg="Un mot de passe est requis!" class="input-material" style="border-radius:20px 10px 20px 10px">
+            <label for="login-password" class="label-material">Password</label>
+          </div>
+          <div class="form-group text-center">
+
+            <button id="login" type="submit" class="btn btn-primary" style="border-radius:20px 5px 20px 5px">Se
+              connecter</button>
+
+            <button class="btn btn float-left shadow px-6" style="background-color:rgb(213, 213, 233);color:black;border-radius:20px 5px 20px 5px"><a
+                routerLink="/login" (click)=" logout()">Annuler</a></button>
+
+          </div>
+        </form><a href="#" class="forgot-pass"></a><small></small><a href="#" class="signup"></a>
+        <div *ngIf="submitted" class="results"></div>
+
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,116 @@
+
+
+<div class="d-flex justify-content-center">
+    <div class="row">
+        <div class="card-header" style="background-color:  #4680ff">
+            <h6 class="text-uppercase mb-13" style="color: white">Transactions</h6>
+        </div>
+        <div class="col-lg-12">
+            <div class="row">
+                
+
+                <div class="card">
+                    <div class="logo text-uppercase"><span>Kanuni@</span><strong class="text-primary">Money</strong>
+                    </div>
+                    <div class="col-lg-12 ">
+                        <form #Trans="ngForm" (ngSubmit)="TransUser(Trans.value )" class="text-left form-validate">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div>
+                                                <input type="radio" (click)="group2()" id="retrait" value="2" ngModel name="type">
+                                                <label for="scales">Retrait</label>
+                                            </div>
+
+                                            <div class="form-group-material" id="env1">
+                                                <input id="register-nom" type="text" ngModel name="nomE" required
+                                                    data-msg="Nom requis!" class="input-material">
+                                                <label for="register-nom" class="label-material">Non env</label>
+                                            </div>
+
+                                            <div class="form-group-material" id="env2">
+                                                <input id="register-prenom" type="text" ngModel name="prenomE"
+                                                    required data-msg="Veillez entrer prenom correct"
+                                                    class="input-material">
+                                                <label for="register-prenom" class="label-material">Prenom env</label>
+                                            </div>
+
+                                            <div class="form-group-material" id="env3">
+                                                <input id="register-telephone" type="number"  ngModel name="telephoneE" 
+                                                    required data-msg="Veillez entrer un numero valide!"
+                                                    class="input-material">
+                                                <label for="register-telephone" class="label-material">telephone env</label>
+                                            </div>
+
+                                            <div class="form-group-material" id="env4">
+                                                <input id="register-telephone" type="text" name="cniE" ngModel
+                                                    required data-msg="Veillez entrer un cin valide!"
+                                                    class="input-material">
+                                                <label for="register-telephone" class="label-material">Cni env</label>
+                                            </div>
+
+                                            <div class="form-group-material" id="env5">
+                                                <input id="register-telephone" type="text" name="code" ngModel
+                                                    required data-msg="Veillez entrer un code valide!"
+                                                    class="input-material">
+                                                <label for="register-telephone" class="label-material">Code</label>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div>
+                                                <input type="radio" (click)="group1()" value="1" ngModel name="type">
+                                                <label for="horns">Envoie</label>
+                                            </div>
+
+                                           
+
+                                            <div class="form-group-material" id="ret2">
+                                                <input id="register-telephone" type="text" ngModel name="nomB"  required
+                                                    data-msg="Veillez entrer un nom valide!" class="input-material">
+                                                <label for="register-telephone" class="label-material">Nom ben</label>
+                                            </div>
+
+                                            <div class="form-group-material" id="ret1">
+                                                <input id="register-telephone" type="text" ngModel name="prenomB"
+                                                    required data-msg="Veillez entrer un prenom valide!"
+                                                    class="input-material">
+                                                <label for="register-telephone" class="label-material">Prenom ben</label>
+                                            </div>
+
+                                            <div class="form-group-material" id="ret3">
+                                                <input id="register-telephone" type="number" ngModel name="telephoneB"
+                                                    required data-msg="Veillez entrer un numero valide!"
+                                                    class="input-material">
+                                                <label for="register-telephone" class="label-material">Telephone ben</label>
+                                            </div>
+                                            <div class="form-group-material" id="ret5">
+                                                <input id="register-telephone" type="number" name="cniB" ngModel required
+                                                    data-msg="Veillez entrer une cin valide!" class="input-material">
+                                                <label for="register-telephone" class="label-material">Cni ben</label>
+                                            </div>
+
+                                            <div class="form-group-material" id="ret4">
+                                                <input id="register-telephone"type="number" name="montant" ngModel required
+                                                    data-msg="Veillez entrer un montant valide!" class="input-material">
+                                                <label for="register-telephone" class="label-material">Montant</label>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="form-group text-center">
+                                            <input id="register" type="submit" value="Enregistrer"
+                                                class="btn btn-primary" style="border-radius:20px 5px 20px 5px">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

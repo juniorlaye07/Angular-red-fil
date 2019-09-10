@@ -1,0 +1,116 @@
+  <div class="d-flex justify-content-center">
+    <div class="row">
+        <div class="card-header" style="background-color:  #4680ff">
+            <h6 class="text-uppercase mb-13" style="color: white">Ajouter Partenaire</h6>
+        </div>
+        <div class="col-lg-12">
+            <div class="row">
+
+                <div class="card">
+                    <div class="logo text-uppercase float-right"><span>Kanuni@</span><strong class="text-primary">Money</strong>
+                    </div>
+                    <div class="col-lg-12 ">
+                        <form #p="ngForm" (ngSubmit)="AddParten(p.value)"
+                            class="text-left form-validate">
+                            <div class="row">
+                                <div class="col-lg-12">
+
+                                    <div  class="file-field">
+                                        
+                                        <img [src]="imgUrl" style="width: 100px;height:100px;border-radius:50%">
+                                       
+                                        <div class="d-flex justify-content-center">
+                                            <div class="btn btn-mdb-color btn-rounded float-left">
+                                            <input type="file" #image accept="images/*"
+                                                (change)="onFilleUpload($event.target.files)" name="imageName"
+                                                class="btn btn-primary" style="border-radius:20px 10px 20px 10px">
+                                                        
+                                        </div>
+                                      </div>              
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group-material">
+                                                <input id="register-nom" type="text" ngModel name="ninea" required
+                                                    data-msg="Ninea requis!" class="input-material" style="border-radius:20px 10px 20px 10px">
+                                                <label for="register-nom" class="label-material">Ninea</label>
+                                            </div>
+
+                                            <div class="form-group-material">
+                                                <input id="register-prenom" type="text" ngModel name="raison_social" required
+                                                    data-msg="Veillez entrer votre raison social" class="input-material" style="border-radius:20px 10px 20px 10px">
+                                                <label for="register-prenom" class="label-material">Raison social</label>
+                                            </div>
+
+                                            <div class="form-group-material">
+                                                <input id="register-telephone" type="text" ngModel name="adresse"
+                                                    required data-msg="Veillez entrer une adresse valide!"
+                                                    class="input-material" style="border-radius:20px 10px 20px 10px">
+                                                <label for="register-telephone" class="label-material">Adresse</label>
+                                            </div>
+
+                                            <div class="form-group-material">
+                                                <input id="register-telephone" type="email" ngModel name="email" required
+                                                    data-msg="Veillez entrer une adresse email valide!" class="input-material" style="border-radius:20px 10px 20px 10px">
+                                                <label for="register-telephone" class="label-material">Email</label>
+                                            </div>
+
+                                            <div class="form-group-material">
+                                                <input id="register-telephone" type="number" ngModel name="telephone" required
+                                                    data-msg="Veillez entrer une adresse email valide!" class="input-material" style="border-radius:20px 10px 20px 10px">
+                                                <label for="register-telephone" class="label-material">Telephone</label>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-lg-6">
+
+                                            <div class="form-group-material">
+                                                <input id="login-username" type="text" name="username" ngModel required
+                                                    data-msg="Nom d'utilisateur requis!" class="input-material"
+                                                    style="border-radius:20px 10px 20px 10px" style="border-radius:20px 10px 20px 10px">
+                                                <label for="login-username" class="label-material">Username</label>
+                                            </div>
+
+                                            <div class="form-group-material">
+                                                <input id="register-password" type="password" name="registerPassword"
+                                                    required data-msg="Mot de passe correct requis!"
+                                                    class="input-material" style="border-radius:20px 10px 20px 10px">
+                                                <label for="register-password" class="label-material">Password</label>
+                                            </div>
+
+                                            <div class="form-group-material">
+                                                <input id="register-telephone" type="text" ngModel name="nom" required
+                                                    data-msg="Veillez entrer un valide!" class="input-material" style="border-radius:20px 10px 20px 10px">
+                                                <label for="register-telephone" class="label-material">Nom</label>
+                                            </div>
+
+                                            <div class="form-group-material">
+                                                <input id="register-telephone" type="text" ngModel name="prenom" required data-msg="Veillez entrer un prenom valide!"
+                                                    class="input-material" style="border-radius:20px 10px 20px 10px">
+                                                <label for="register-telephone" class="label-material">prenom</label>
+                                            </div>
+
+                                            <div class="form-group-material">
+                                                <input id="register-telephone" type="number" ngModel name="telephone" required
+                                                    data-msg="Veillez entrer une adresse email valide!" class="input-material" style="border-radius:20px 10px 20px 10px">
+                                                <label for="register-telephone" class="label-material">Telephone</label>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="form-group text-center">
+                                            <input id="register" type="submit" value="Enregistrer"
+                                                class="btn btn-primary btn-md" style="border-radius:20px 10px 20px 10px">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

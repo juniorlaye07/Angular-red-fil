@@ -1,0 +1,89 @@
+         
+                <script>
+                  $(document).ready(function () {
+                    $('#dBasicExample').DataTable();
+                    $('.dataTables_length').addClass('bs-select');
+                  });
+                </script>
+          <div class="row">
+              <div class="col-lg-12">
+                  <div class="card-header" style="background-color:  #4680ff">
+                    <h6 class="text-uppercase mb-13" style="color: white">Nos Partenaires</h6>
+                  </div>
+                  <div class="card">
+                  <div class="card-body">
+                    <div class="table-responsive">
+                    <table id="dBasicExample" class="table table-striped table-bordered table-sm">
+                      <thead>
+                        <tr>
+                          <th id="">Ninea</th>
+                          <th id="">Raison Social</th>
+                          <th id="">Adrssee</th>
+                          <th id="">Telephone</th>
+                          <th id="">Status</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let partenaire of Partenaires">
+                          <td>{{ partenaire.ninea }}</td>
+                          <td>{{ partenaire.raisonSocial }}</td>
+                          <td>{{ partenaire.adresse }}</td>
+                          <td>{{ partenaire.telephone }}</td>
+                          <td><button  class="btn btn-success" (click)="BloquerParten(partenaire.id)"><i class="fas fa-lock-open"></i>{{ partenaire.statut }}</button></td>
+
+                        </tr>
+                      </tbody>
+                    </table>
+                    </div>
+                </div>
+                </div>
+            </div>
+          </div>
+          <button class="btn btn-success" (click)="compte()" ><i class="fas fa-lock-open"></i>Creer compte</button>
+                
+          
+          <div class="d-flex justify-content-center" id="cote">
+            <div class="row">
+              <div class="card-header" style="background-color:  #4680ff">
+                <h6 class="text-uppercase mb-13" style="color: white">Créer un compte</h6>
+              </div>
+              <div class="col-lg-12">
+                <div class="row">
+          
+                  <div class="card">
+                    <div class="logo text-uppercase"><span>Kanuni@</span><strong class="text-primary">Money</strong>
+                    </div>
+                    <div class="col-lg-12 ">
+                      <form  #d="ngForm" (ngSubmit)="CreatCompte(d.value)" class="text-left form-validate">
+                        <div class="row">
+                          <div class="col-lg-12">
+                            
+                            <div class="row">
+                              <div class="col-lg-6">
+
+                                <div class="form-group-material">
+                                  <input id="register-nom" type="text" ngModel name="ninea" required data-msg="Ninea requis!"
+                                    class="input-material">
+                                  <label for="register-nom" class="label-material">Ninea</label>
+                                </div>
+          
+                              </div>
+          
+                              <div class="form-group text-center">
+                                <input id="register" type="submit" value="Valider" class="btn btn-primary">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+          
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+   
+    
+     
+    
