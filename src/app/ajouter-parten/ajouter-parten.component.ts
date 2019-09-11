@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { PartenaireService } from '../services/partenaire.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-ajouter-parten',
@@ -37,10 +38,14 @@ export class AjouterPartenComponent implements OnInit {
   AddParten(PartenForm: any) {
     resp => console.log(PartenForm);
     this.partenService.AjoutParten(PartenForm, this.imgeUpload).subscribe(
-      resp => console.log(resp),
-      err => {
+      resp => {
+        this.router.navigate['/partenaire']
+        console.log(resp)
+         if (resp.msg1) {
+      Swal.fire(resp.msg1)
+      }
+      err => 
         console.log(err)
       });
   }
-
 }

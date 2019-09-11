@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
-import { UsersService } from '../services/users.service';
 import { UtilisateurService } from '../services/utilisateur.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-add-user',
@@ -42,11 +42,20 @@ export class AddUserComponent implements OnInit {
     console.log(userForm);
     this.UserService.AjoutUser(userForm, this.imgUpload).subscribe(
       resp => {
-        this.router.navigate(["utilisateur"])
+        
         console.log(resp)
-      err => 
+        if (resp.massages8) {
+          Swal.fire(resp.massages8)
+        }
+        this.router.navigate(['/utilisateur'])
+        
+      err => {
         console.log(err)
-      });
+        if (err.error.messages7) {
+          Swal.fire(err.error.messages7)
+        }
+      }      
+    });
   }
 
 }

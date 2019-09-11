@@ -9,11 +9,14 @@ export class UtilisateurService {
 
   Headers = { headers: new HttpHeaders().set("Authorization", "Bearer " + localStorage.getItem('token')) };
   
-  public hostUser = "http://127.0.0.1:8000/api/listeUsers/10";
+  public hostUser = "http://127.0.0.1:8000/api/listeUsers";
   public hotAjout = "http://127.0.0.1:8000/api/form";
-  public hostUpUse = "http://127.0.0.1:8000/api/UpdateCompte/";
+  public hostUpCompt = "http://127.0.0.1:8000/api/UpdateCompte/";
   public hostBloc = "http://127.0.0.1:8000/api/BloqueUser/";
+  public hostUpUser = "http://127.0.0.1:8000/api/"
+
   constructor(private http: HttpClient) { }
+
   getUser(): Observable<any> {
     return this.http.get(this.hostUser, this.Headers);
   }
@@ -35,8 +38,13 @@ export class UtilisateurService {
   BlocUser(id):Observable<any> {
     return this.http.get(this.hostBloc+id, this.Headers)
   }
+
   AllouCompt(id): Observable<any> {
-    return this.http.put(this.hostUpUse+id, this.Headers)
+    return this.http.get(this.hostUpCompt+id, this.Headers)
+  }
+
+  UpdateUser(): Observable<any>{
+    return this.http.get(this.hostUpUser , this.Headers)
   }
 
 }

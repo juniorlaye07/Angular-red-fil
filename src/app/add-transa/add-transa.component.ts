@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TransactionService } from '../services/transaction.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2'
 import { FormBuilder } from '@angular/forms';
 
 @Component({
@@ -19,10 +20,19 @@ export class AddTransaComponent implements OnInit {
   TransUser(transform) {
     resp => console.log(transform);
     this.transervice.FaireTransac(transform).subscribe(
-      resp => { this.router.navigate['transaction']
+      resp => { this.router.navigate['/transaction']
         console.log(resp)},
       err => {
         console.log(err)
+        if (err.error.message0) {
+          Swal.fire(err.error.message0)
+        }
+        if (err.error. message2) {
+          Swal.fire(err.error.message2)
+        }
+        if (err.error.message3) {
+          Swal.fire(err.error.message3)
+        }
       }); 
   }
   group1() {

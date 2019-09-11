@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2'
 import {  PartenaireService } from '../services/partenaire.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
@@ -32,8 +33,11 @@ export class PartenaireComponent implements OnInit {
  
   CreatCompte(ComptForm:any){
     this.partenService.AddCompte(ComptForm).subscribe(
-      resp => console.log(resp),
-      err => {
+      resp => { console.log(resp)
+       if (resp.msg2) {
+      Swal.fire(resp.msg2)
+      }  
+      err =>
         console.log(err)
       });
   }
@@ -41,9 +45,12 @@ export class PartenaireComponent implements OnInit {
     this.partenService.BlocPart(id).subscribe(
       resp => { console.log(resp)
         this.ngOnInit()
+        if (resp.messge10) {
+          Swal.fire(resp.messge10)
+        } 
       },
       err => {
-        console.log(err)
+        console.log(err) 
       });
   }
   Contrat(){
@@ -54,7 +61,7 @@ export class PartenaireComponent implements OnInit {
       });
   }
   compte(){
-    document.getElementById('cote').style.display = 'none';
+    document.getElementById('compt-parten').style.display = 'none';
   }
  
 }

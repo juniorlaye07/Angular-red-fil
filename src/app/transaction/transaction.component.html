@@ -10,40 +10,53 @@
                     <table class="table table-striped table-sm card-text" style="width:100%">
                       <thead>
                         <tr>
-                          <th id="">Nom env</th>
-                          <th id="">Prenom env</th>
-                          <th id="">Tel env</th>
-                          <th id="">CNI env</th>
-                          
-                          <th id="">Code</th>
-                          <th id="">Envoie</th>
-                          <th id="">Retrait</th>
-                          
-                          <th id="">Nom Benef</th>
-                          <th id="">Prenom Benef</th>                        
-                          <th id="">CIN Benef</th>
-                          <th id="">Tel Benef</th>
+                          <th id="">Nom envoyeur</th>
+                          <th id="">Prenom envoyeur</th>
+                          <th id="">Tel envoyeur</th>
+                          <th id="">CNI envoyeur</th>
+
+                          <th id="">Nom Beneficiaire</th>
+                          <th id="">Prenom Beneficiare</th>                        
+                          <th id="">CIN Beneficiaire</th>
+                          <th id="">Tel Beneficiaire</th>
+
                           <th id="">Montant</th>
+                          <th id="">Date Transaction</th>
+                          
                           
                         </tr>
                       </thead>
                       <tbody>
                         <tr >
-                          <td>{{ Trans.nom_e}}</td>
-                          <td>{{ Trans.prenom_e }}</td>
-                          <td>{{ Trans.telephone_e }}</td>
+                          <td>{{ Trans.nomE}}</td>
+                          <td>{{ Trans.prenomE }}</td>
+                          <td>{{ Trans.telephoneE }}</td>
                           <td>{{ Trans.cniE }}</td>
-                          <td>{{ Trans.code_trans }}</td>
-                          <td>{{ Trans.envoi }}</td>
-                          <td>{{ Trans.retrait }}</td>
+                         
                           <td>{{ Trans.nomB }}</td>
                           <td>{{ Trans.prenomB }}</td>
                           <td>{{ Trans.cinB }}</td>
                           <td>{{ Trans.telephoneB }}</td>
                           <td>{{ Trans.montant }}</td>
+
+                          <td>{{ Trans.dateTrans }}</td>
+                        
                         </tr>
+
                         <tr>
+                          
+                          <td>{{ Trans.transaction.nomE}}</td>
+                          <td>{{ Trans.transaction.prenomE }}</td>
+                          <td>{{ Trans.transaction.telephoneE }}</td>
+                          <td>{{ Trans.transaction.cniE }}</td>
+                          
                           <td>{{ Trans.transaction.nomB }}</td>
+                          <td>{{ Trans.transaction.prenomB }}</td>
+                          <td>{{ Trans.transaction.cniB }}</td>
+                          <td>{{ Trans.transaction.telephoneB }}</td>
+                          <td>{{ Trans.transaction.montant }}</td>
+                          
+                          <td>{{ Trans.transaction.dateTrans }}</td>
                         </tr>
                         
                       

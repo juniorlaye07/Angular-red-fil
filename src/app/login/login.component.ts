@@ -32,6 +32,9 @@ export class LoginComponent implements OnInit {
   isUser() {
     return this.authenticationService.isUser();
   }
+  isAuthenticated(){
+
+  }
 
   onLogin(data: any){
      this.authenticationService.login(data)
@@ -56,17 +59,24 @@ export class LoginComponent implements OnInit {
         },
        err => {
          console.log(err)
-         if (err.error.mesge) {
-           Swal.fire(err.error.mesge)
+         if (err.error.messages1) {
+           Swal.fire(err.error.messages1)
          }
-         if (err.error.mesges) {
-           Swal.fire(err.error.mesges)
+         if (err.error.messages2) {
+           Swal.fire(err.error.messages2)
+         }
+         if (err.error.messages3) {
+           Swal.fire(err.error.messages3)
+         }
+         if (err.error.messages4) {
+           Swal.fire(err.error.messages4)
+         }
+         if (err.error.messages5) {
+           Swal.fire(err.error.messages5)
+         }
+         if (err.error.messages6) {
+           Swal.fire(err.error.messages6)
          }
        })
   }
-  onlogout(){
-    
-  }
-
- 
 }

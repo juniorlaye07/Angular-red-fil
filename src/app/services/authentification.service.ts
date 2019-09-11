@@ -63,18 +63,14 @@ export class AuthentificationService {
     return this.roles.indexOf('ROLE_USERs')>= 0;
   }
 
-  initParametre() {
-    this.jwttoken = undefined;
-    this.roles = undefined;
-    this.username = undefined;
-  }
   isAuthenticated() {
     return this.roles && (this.isSuperAdminSystem()|| this.isAdminPartenaire() || this.isCaisier() || this.isUser());
   }
   logout() {
-    // remove user from local storage to log user out
-    localStorage.removeItem('jwttoken');
-    this.initParametre();
+    localStorage.removeItem('token');
+    this.jwttoken = undefined;
+    this.username = undefined;
+    this.roles = undefined;
   }
 
 }

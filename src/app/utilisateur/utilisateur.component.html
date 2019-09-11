@@ -23,7 +23,7 @@
                           <th class="th-sm" id="">Telephone</th>
                           <th class="th-sm" id="">Numero Compte</th>
                           <th class="th-sm" id="">status</th>
-                          <th class="th-sm" id="">Action</th>
+                          <th class="th-sm" id="">Comptes</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -32,11 +32,9 @@
                           <td>{{ user.prenom }}</td>
                           <td>{{ user.nom }}</td>
                           <td>{{ user.telephone }}</td>
-                          <td ><a (click)="Alcompte(user.id)">{{ user.compteBancaire }} </a></td>
-                          <td><button class="btn btn-success" (click)="BloquerUser(user.id)"><i class="fas fa-lock-open" ></i>{{ user.status }}</button></td>
-                          <td>
-                          <button class="btn btn-primary" (click)="logout()"><i class="fas fa-edit"></i>edit</button>
-                          </td>
+                          <td >{{ user.compteBancaire }}</td>
+                          <td><button class="btn btn-primary" (click)="BloquerUser(user.id)"><i class="fas fa-lock-open"></i>{{ user.status }}</button></td>
+                          <td><button class="btn btn-primary glyphicon glyphicon-plus" (click)="Alcompte(user.id)"><i class="fas fa-edit"></i>Compte</button></td>
                       </tbody>
                     </table>
                     </div>

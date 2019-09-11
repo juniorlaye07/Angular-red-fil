@@ -12,9 +12,8 @@ export class AppComponent  implements OnInit{
   
   constructor(private router: Router,private authenticationService: AuthentificationService){}
 
-  ngOnInit(): void {
-    this.authenticationService.loadToken();
-    console.log(this.authenticationService.isAuthenticated());
+   ngOnInit(){
+  
     this.router.navigate(["/login"]);
   }
   isSuperAdminSystem() {
@@ -24,13 +23,18 @@ export class AppComponent  implements OnInit{
     return this.authenticationService.isAdminPartenaire();
   }
   isAuthenticated(){
-    this.authenticationService.isAuthenticated();
+    return this.authenticationService.isAuthenticated();
   }
-  // logout() {
-  //   // remove user from local storage to log user out
-  //   this.authenticationService.logout();
-  //   localStorage.removeItem('currentUser');
+  isCaisier() {
+    return this.authenticationService.isCaisier();
+  }
+  isUser() {
+    return this.authenticationService.isUser();
+  }
+  logout() {
     
-  // }
+    this.authenticationService.logout();
+   
+  }
 
 }
