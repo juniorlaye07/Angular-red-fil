@@ -42,13 +42,11 @@ export class AddUserComponent implements OnInit {
     console.log(userForm);
     this.UserService.AjoutUser(userForm, this.imgUpload).subscribe(
       resp => {
-        
+        this.router.navigate(['/utilisateur'])
         console.log(resp)
         if (resp.massages8) {
           Swal.fire(resp.massages8)
         }
-        this.router.navigate(['/utilisateur'])
-        
       err => {
         console.log(err)
         if (err.error.messages7) {

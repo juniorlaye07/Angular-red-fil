@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit {
             this.router.navigate(["/caisier"]);
           }
           else if (this.isUser()) {
-            this.router.navigate(["/utilisateur"]);
+            this.router.navigate(["/addTransa"]);
           }
           else{
             this.router.navigate(["/login"]);

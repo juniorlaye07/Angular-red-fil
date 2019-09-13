@@ -20,8 +20,11 @@ export class AddTransaComponent implements OnInit {
   TransUser(transform) {
     resp => console.log(transform);
     this.transervice.FaireTransac(transform).subscribe(
-      resp => { this.router.navigate['/transaction']
-        console.log(resp)},
+      resp => {
+        this.router.navigate['/transaction']
+        console.log(resp)
+          Swal.fire(resp.message3) 
+      },
       err => {
         console.log(err)
         if (err.error.message0) {
@@ -30,9 +33,7 @@ export class AddTransaComponent implements OnInit {
         if (err.error. message2) {
           Swal.fire(err.error.message2)
         }
-        if (err.error.message3) {
-          Swal.fire(err.error.message3)
-        }
+        
       }); 
   }
   group1() {

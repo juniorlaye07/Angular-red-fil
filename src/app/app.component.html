@@ -26,12 +26,12 @@
         </nav>
   
     </header>
-    <nav class="side-navbar" *ngIf="isAuthenticated()">
+    <nav class="side-navbar" *ngIf="isAuthenticated()" style="background-image: url('about-lg.jpg')">
         <div class="side-navbar-wrapper">
             <!-- Sidebar Header    -->
             <div class="sidenav-header d-flex align-items-center justify-content-center">
                 <!-- User Info-->
-                <div class="sidenav-header-inner text-center"><img src="assets/img/icon.jpg" alt="person"
+                <div class="sidenav-header-inner text-center"><img src="assets/img/jpo.jpg" alt="person"
                         class="img-fluid rounded-circle">
                     <h2 class="h5">K@M</h2><span>Un transfert,fiable et securisé!</span>
                 </div>
@@ -51,7 +51,7 @@
                                 class="icon-interface-windows"></i>Ajouter</a>
                         <ul id="exampledropdownDropdown1" class="collapse list-unstyled ">
                             <li *ngIf="isSuperAdminSystem()"><a [routerLink]="['/addpartenaire']">Partenaire</a></li>
-                            <li *ngIf="isAdminPartenaire()"><a [routerLink]="['/addUser']">Users</a></li>
+                            <li *ngIf="isAdminPartenaire() || isSuperAdminSystem()"><a [routerLink]="['/addUser']">Users</a></li>
                         </ul>
                     </li>
                     <li *ngIf="isUser()"><a [routerLink]="['/addTransa']"><i class="fa fa-bar-chart"></i>Faire transaction</a></li>
